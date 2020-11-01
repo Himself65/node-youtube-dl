@@ -1,6 +1,6 @@
-var vows = require('vows')
-var ytdl = require('..')
-var assert = require('assert')
+const vows = require('vows')
+const ytdl = require('..')
+const assert = require('assert')
 
 vows
   .describe('getExtractors')

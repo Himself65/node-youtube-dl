@@ -1,6 +1,6 @@
-var ytdl = require('..')
+const ytdl = require('..')
 
-var playlist = [
+const playlist = [
   'http://www.youtube.com/watch?v=SvPZo52X5vo',
   'http://www.youtube.com/watch?v=2xJWQPdG7jE'
 ]

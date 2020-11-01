@@ -1,6 +1,6 @@
-var ytdl = require('..')
+const ytdl = require('..')
 
-var url = 'https://www.youtube.com/watch?v=H7HmzwI67ec'
+const url = 'https://www.youtube.com/watch?v=H7HmzwI67ec'
 
 // pass ['-f', 'bestaudio'] || ['-f', 'm4a'] for other formats with yt
 

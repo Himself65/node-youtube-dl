@@ -1,13 +1,13 @@
-var ytdl = require('..')
-var fs = require('fs')
-var output = 'myvideo.mp4'
+const ytdl = require('..')
+const fs = require('fs')
+const output = 'myvideo.mp4'
 
-var downloaded = 0
+let downloaded = 0
 if (fs.existsSync(output)) {
   downloaded = fs.statSync(output).size
 }
 
-var video = ytdl(
+const video = ytdl(
   'https://www.youtube.com/watch?v=179MiZSibco',
 
   // Optional arguments passed to youtube-dl.
@@ -24,7 +24,7 @@ video.on('info', function (info) {
   console.log('filename: ' + info._filename)
 
   // info.size will be the amount to download, add
-  var total = info.size + downloaded
+  const total = info.size + downloaded
   console.log('size: ' + total)
 
   if (downloaded > 0) {

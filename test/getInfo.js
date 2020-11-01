@@ -1,6 +1,6 @@
-var vows = require('vows')
-var ytdl = require('..')
-var assert = require('assert')
+const vows = require('vows')
+const ytdl = require('..')
+const assert = require('assert')
 
 vows
   .describe('getInfo')
@@ -8,7 +8,7 @@ vows
     'from a youtube video': {
       topic: function () {
         'use strict'
-        var video = 'http://www.youtube.com/watch?v=90AiXO1pAiA'
+        const video = 'http://www.youtube.com/watch?v=90AiXO1pAiA'
         ytdl.getInfo(video, ['--format=mp4'], this.callback)
       },
 
@@ -41,7 +41,7 @@ vows
     'from a youtube playlist': {
       topic: function () {
         'use strict'
-        var pl = 'https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807'
+        const pl = 'https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807'
         ytdl.getInfo(pl, this.callback)
       },
 
@@ -58,7 +58,7 @@ vows
     'from a twitch video': {
       topic: function () {
         'use strict'
-        var video =
+        const video =
           'https://clips.twitch.tv/RelentlessOptimisticPterodactylRitzMitz'
         ytdl.getInfo(video, ['--no-warnings'], this.callback)
       },
@@ -95,8 +95,8 @@ vows
     'from multiple videos': {
       topic: function () {
         'use strict'
-        var youtube = 'http://www.youtube.com/watch?v=90AiXO1pAiA'
-        var twitch =
+        const youtube = 'http://www.youtube.com/watch?v=90AiXO1pAiA'
+        const twitch =
           'https://clips.twitch.tv/RelentlessOptimisticPterodactylRitzMitz'
         ytdl.getInfo(
           [youtube, twitch],
@@ -158,7 +158,7 @@ vows
     'with get url only flag': {
       topic: function () {
         'use strict'
-        var youtube = 'http://www.youtube.com/watch?v=90AiXO1pAiA'
+        const youtube = 'http://www.youtube.com/watch?v=90AiXO1pAiA'
         ytdl.getInfo(youtube, ['-g', '--format=mp4'], this.callback)
       },
 

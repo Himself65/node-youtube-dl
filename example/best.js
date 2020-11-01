@@ -1,5 +1,5 @@
-var ytdl = require('..')
-var url = 'https://www.youtube.com/watch?v=fmIGnd98DX4'
+const ytdl = require('..')
+const url = 'https://www.youtube.com/watch?v=fmIGnd98DX4'
 
 ytdl.exec(
   url,

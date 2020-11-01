@@ -1,6 +1,6 @@
-var ytdl = require('..')
+const ytdl = require('..')
 
-var url = 'http://www.youtube.com/watch?v=0RUvealeXZ0'
+const url = 'http://www.youtube.com/watch?v=0RUvealeXZ0'
 
 function mapInfo (item) {
   'use strict'
@@ -18,6 +18,6 @@ ytdl.getInfo(url, function getInfo (err, info) {
   if (err) {
     throw err
   }
-  var formats = { id: info.id, formats: info.formats.map(mapInfo) }
+  const formats = { id: info.id, formats: info.formats.map(mapInfo) }
   console.log(formats)
 })

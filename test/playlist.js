@@ -1,9 +1,9 @@
-var vows = require('vows')
-var ytdl = require('..')
-var fs = require('fs')
-var path = require('path')
-var assert = require('assert')
-var video1 = 'https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807'
+const vows = require('vows')
+const ytdl = require('..')
+const fs = require('fs')
+const path = require('path')
+const assert = require('assert')
+const video1 = 'https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807'
 
 vows
   .describe('download playlist')
@@ -12,18 +12,18 @@ vows
       topic: function () {
         'use strict'
 
-        var cb = this.callback
-        var details = []
-        var count = 0
+        const cb = this.callback
+        const details = []
+        let count = 0
 
         function playlist (url) {
-          var dl = ytdl(url)
+          const dl = ytdl(url)
 
           dl.on('error', cb)
 
           dl.on('info', function (info) {
-            var pos = 0
-            var progress
+            let pos = 0
+            let progress
 
             dl.on('data', function (data) {
               pos += data.length
@@ -40,7 +40,7 @@ vows
 
             dl.on('next', playlist)
 
-            var filepath = path.join(__dirname, info._filename)
+            const filepath = path.join(__dirname, info._filename)
             dl.pipe(fs.createWriteStream(filepath))
           })
         }
@@ -74,8 +74,8 @@ vows
         )
 
         function fileExists (data) {
-          var filepath = path.join(__dirname, data._filename)
-          var exists = fs.existsSync(filepath)
+          const filepath = path.join(__dirname, data._filename)
+          const exists = fs.existsSync(filepath)
 
           if (exists) {
             // Delete file after each test.
